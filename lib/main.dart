@@ -33,19 +33,23 @@ class _MyHomePageState extends State<MyHomePage> {
       _counter++;
     });
   }
+
   void _decrementCounter() {
     setState(() {
       _counter--;
     });
   }
+
   _showDialog() {
     showDialog(
         context: context,
         builder: (context) {
           return AlertDialog(
             title: Text('Alert message !'),
-            content: Text("Welcome to the dialog " + _counter.toString()),
-            key: ValueKey('alert_text'),
+            content: Text(
+              "Welcome to the dialog " + _counter.toString(),
+              key: ValueKey('alert_text'),
+            ),
             actions: <Widget>[
               FlatButton(
                   onPressed: () {

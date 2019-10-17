@@ -46,5 +46,16 @@ void main() {
       expect(await driver.getText(counterTextFinder), "2");
       //
     });
+
+    test('Testing the alert window',() async{
+      //Tap the add button to open the alert box
+      await driver.tap(buttonAdd);
+      expect(await driver.getText(alertText), "Welcome to the dialog 2");
+      //Tap cancel button to exit the dialog
+      await driver.tap(buttonClose);
+      //Tap on Subtract button
+      await driver.tap(buttonSubtract);
+      expect(await driver.getText(counterTextFinder), "1");
+    });
   });
 }
